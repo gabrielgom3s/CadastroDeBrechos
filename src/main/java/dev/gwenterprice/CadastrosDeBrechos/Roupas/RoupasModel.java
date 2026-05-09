@@ -2,9 +2,15 @@ package dev.gwenterprice.CadastrosDeBrechos.Roupas;
 
 import dev.gwenterprice.CadastrosDeBrechos.Brechos.Controller.BrechoService.BrechoModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_roupas")
+@NoArgsConstructor //<- cria construtores vazios
+@AllArgsConstructor //<- cria todos os contrutores
+@Data // <- cria todos os getter and setters
 public class RoupasModel {
 
     @Id
@@ -17,41 +23,4 @@ public class RoupasModel {
     //Uso o @OneToOne pois quando eu vou cadastrar a roupa, esse roupa estara apenas no brecho espeficico, não podendo estar em mais de um
     @OneToOne(mappedBy = "roupa")
     private BrechoModel brecho;
-
-    //Contrutor Vazio
-    public RoupasModel() {
-    }
-
-    //Construtores
-    public RoupasModel(String corDaRoupa, String tamanhoDaRoupa, String marcaDaRoupa) {
-        this.corDaRoupa = corDaRoupa;
-        this.tamanhoDaRoupa = tamanhoDaRoupa;
-        this.marcaDaRoupa = marcaDaRoupa;
-    }
-
-    //Getters
-    public String getCorDaRoupa() {
-        return corDaRoupa;
-    }
-
-    public String getTamanhoDaRoupa() {
-        return tamanhoDaRoupa;
-    }
-
-    public String getMarcaDaRoupa() {
-        return marcaDaRoupa;
-    }
-
-    //Setters
-    public void setCorDaRoupa(String corDaRoupa) {
-        this.corDaRoupa = corDaRoupa;
-    }
-
-    public void setTamanhoDaRoupa(String tamanhoDaRoupa) {
-        this.tamanhoDaRoupa = tamanhoDaRoupa;
-    }
-
-    public void setMarcaDaRoupa(String marcaDaRoupa) {
-        this.marcaDaRoupa = marcaDaRoupa;
-    }
 }
