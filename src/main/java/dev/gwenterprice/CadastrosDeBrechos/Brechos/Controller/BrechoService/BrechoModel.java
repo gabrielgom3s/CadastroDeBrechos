@@ -1,6 +1,9 @@
-package dev.gwenterprice.CadastrosDeBrechos;
+package dev.gwenterprice.CadastrosDeBrechos.Brechos.Controller.BrechoService;
 
+import dev.gwenterprice.CadastrosDeBrechos.Roupas.RoupasModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //Entity ele transforma uma classe em uma entidade do BD
 // JPA = Java Persistence API
@@ -14,6 +17,11 @@ public class BrechoModel {
     private String nome;
     private String endreco;
     private String estiloRoupa;
+
+    //Uso @ManyToMany pois o brecho pode ter varias roupas
+    @OneToMany
+    @JoinColumn(name = "roupa_id") //Foreing Key
+    private RoupasModel roupa;
 
     public BrechoModel() {
     }

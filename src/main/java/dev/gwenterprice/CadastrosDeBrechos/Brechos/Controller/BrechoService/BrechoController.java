@@ -1,4 +1,4 @@
-package dev.gwenterprice.CadastrosDeBrechos;
+package dev.gwenterprice.CadastrosDeBrechos.Brechos.Controller.BrechoService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
